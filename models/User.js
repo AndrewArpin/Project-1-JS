@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 // Step 1: Add the Passport plugin
 
@@ -49,6 +50,7 @@ UserSchema.virtual('passwordConfirmation')
   this._passwordConfirmation = value;
 });
 
-// Step 2: Create a virtual attribute that returns the fullname of the user
-
+UserSchema.plugin(passportLocalMongoose, {
+  usernameField: 'email'
+});
 module.exports = mongoose.model('User', UserSchema);
