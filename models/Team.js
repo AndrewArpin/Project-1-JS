@@ -12,3 +12,11 @@
   or query function. For example, you could have a
   book's details output in an easy format: book.format()
 */
+const mongoose = require('mongoose');
+
+const TeamSchema = new mongoose.Schema({
+ 
+});
+
+
+module.exports = mongoose.model('Team', TeamSchema);
