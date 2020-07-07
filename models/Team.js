@@ -15,7 +15,40 @@
 const mongoose = require('mongoose');
 
 const TeamSchema = new mongoose.Schema({
- 
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  teamName: {
+    type: String,
+    required: false
+  },
+  playerOne: {
+    type: String,
+    required: false
+  },
+  playerTwo: {
+    type: String,
+    required: false
+  },
+  playerThree: {
+    type: String,
+    required: false
+  },
+  playerFour: {
+    type: String,
+    required: false
+  },
+  playerFive: {
+    type: String,
+    required: false 
+  },
+   status: {
+     type: String,
+     enum: ['In Progress', 'Finished'],
+     default: 'In Progress'
+   }
 });
 
 
